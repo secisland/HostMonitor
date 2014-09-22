@@ -136,7 +136,7 @@ def thread_system(conf):
 		sys.exit(1)
 	sys_stat = system.SystemStat(cpu_core = threshold_cpu_core)
 	
-    while True:
+	while True:
 		base.threshold(threshold_mem , sys_stat.get_mem_usage() , "内存使用率" , 'mem')
 		base.threshold(threshold_load , sys_stat.get_load() , "系统负载" , 'load')
 		disk = sys_stat.get_disk_usage()
@@ -290,7 +290,7 @@ class Config(object):
 				return self.config.items(args[0])
 			elif l == 2:
 				return self.config.get(args[0],args[1])
-       	except (ConfigParser.NoSectionError,ConfigParser.NoOptionError) ,e:
+		except (ConfigParser.NoSectionError,ConfigParser.NoOptionError) ,e:
 			base.MQ.put("%s [ERROR] 配置文件读取错误：%s"%(base.TIME(),e))
 	def get_sections(self):
 		return self.config.sections()
