@@ -1,4 +1,32 @@
-monitoragent
+hostmonitor
 ============
 
-it's an agent running in linux platformat for monitor host.
+一、概述
+
+hostmonitor用于主机监控的脚本程序。主要功能如下：
+
+1.通过定义配置文件，可对配置内容进行监控，超过阀值会被认为是异常现象，会被记录异常（如果配置了url报警接口，报警接口可以发送短信告警）;
+2.可配置的监控内容：
+  CPU使用率（可监控每个核）
+  内存使用率
+  系统挂载点使用量
+  系统inode使用量
+  网络流量
+  ssh登陆IP
+  文件修改或删除监控
+  mysql主从同步和日志报警
+  进程或端口监控
+  自定义接口调用
+3.进程可后台运行。
+  
+二、运行环境：
+linux
+python 2.6.6+
+
+三、如何使用
+
+1.启动:
+python main.py
+
+2.停止：
+kill `cat run/monitor.pid`
