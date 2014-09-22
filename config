@@ -1,0 +1,27 @@
+[base]
+daemon = True
+; log_level = [DEBUG|INFO|WARNING|ERROR|CRITICAL]
+log_level =  DEBUG
+logfile = /usr/local/service/monitor/log/monitor.log
+apiurl = http://url
+
+[system]
+cpu = 0,90
+cpu_core = False 
+mem = 0,80
+disk = 0,85
+inode = 0,85
+load = 0,6
+net = 0,100
+
+[sec]
+md_sys_path = /etc:/etc/init.d:/etc/sysconfig:/etc/rc.d:/etc/rc.d/rc3.d:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+md_app_path = 
+; /usr/local/service/nginx/conf:/usr/local/service/php/etc
+md_file = /root/.bash_profile:/root/.bash_logout:/root/.bashrc
+access_ip_list=27.0.0.1:1.1.1.1
+
+[proc]
+vmtoolsd = /usr/lib/vmware-tools/sbin64/vmtoolsd::/usr/sbin/vmtoolsd -b /var/run/vmtoolsd.pid
+;smokeping = /usr/bin/perl::/usr/local/smokeping/bin/smokeping
+;httpd = /usr/sbin/httpd:80:service httpd start
